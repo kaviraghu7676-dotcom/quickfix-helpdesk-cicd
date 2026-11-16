@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFix | IT Helpdesk Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>QuickFix</h2>
+
+        <p class="side-label">WORKSPACE</p>
+
+        <a class="active" href="/">Dashboard</a>
+        <a href="#tickets">All Tickets</a>
+        <a href="#create">Create Ticket</a>
+
+        <div class="side-footer">
+            IT Helpdesk System
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome to your IT support workspace</p>
+            </div>
+            <span class="admin">Admin</span>
+        </header>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <p>Total Tickets</p>
+                <h2 id="totalCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Open Tickets</p>
+                <h2 id="openCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>In Progress</p>
+                <h2 id="progressCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Resolved</p>
+                <h2 id="resolvedCount">0</h2>
+            </div>
+
+        </section>
+
+        <section class="panel" id="create">
+
+            <h2>Create New Ticket</h2>
+
+            <form id="ticketForm">
+
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name"
+                           placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="issue">Issue Description</label>
+                    <input type="text" id="issue"
+                           placeholder="Describe your IT issue" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option>Hardware</option>
+                        <option>Network</option>
+                        <option>Software</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <button type="submit">Submit Ticket</button>
+
+            </form>
+
+        </section>
+
+        <section class="panel" id="tickets">
+
+            <h2>Recent Tickets</h2>
+
+            <div id="ticketList">
+                No tickets submitted yet.
+            </div>
+
+        </section>
+
+        <footer>
+            QuickFix IT Helpdesk | Powered by Java Spring Boot
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="/script.js"></script>
+
+</body>
+</html>
+
+
