@@ -21,5 +21,22 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t quickfix-helpdesk:${BUILD_NUMBER} .'
+                sh 'docker tag quickfix-helpdesk:${BUILD_NUMBER} quickfix-helpdesk:latest'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                    docker rm -f quickfix-app || true
+                    docker run -d --restart unless-stopped --name quickfix-app -p 8081:8080 quickfix-helpdesk:latest
+                '''
+            }
+        }
     }
 }
+
