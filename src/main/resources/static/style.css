@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #0b1120;
+    background: #1a102b;
     color: #e2e8f0;
 }
 
@@ -19,7 +19,7 @@ body {
 .sidebar {
     width: 245px;
     flex-shrink: 0;
-    background: #111827;
+    background:  #26163d;
     color: white;
     padding: 30px 20px;
     display: flex;
